@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表示選択画面</title>
+  <meta charset="utf-8">
+  <link href="" rel="stylesheet">
+</head>
+<body>
+    <!-- <a onclick="history.back()" class="">戻る</a> -->
+    <a href="/logout">ログアウト</a>
+    <h1>授業：{{params.subject}}</h1>
+    <form action="/attendance_check" method="POST" name="attendance_check">
+      <input type="hidden" name="subject" value="{{ params.subject }}">
+      <a href="javascript:attendance_check.submit()">出席確認</a>
+    </form> 
+
+
+    <form action="/student_list" method="POST" name="student_list">
+    <input type="hidden" name="subject" value="{{ params.subject }}">
+    <a href="javascript:student_list.submit()">成績一覧</a>
+    </form> 
+</body>
+</html>

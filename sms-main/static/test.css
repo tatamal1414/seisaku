@@ -1,0 +1,292 @@
+dialog {
+    display: block; 
+}
+
+dialog:not(:target):not([open]) { 
+   display: none; 
+}
+body{
+font-family: Helvetica;
+-webkit-font-smoothing: antialiased;
+background: rgb(250, 250, 250);
+}
+table .h2{
+text-align: center;
+font-size: 18px;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: white;
+padding: 30px 0;
+}
+
+/* Table Styles */
+
+table{
+margin: 10px 70px 70px 0px;
+box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+table {
+border-radius: 5px;
+font-size: 12px;
+font-weight: normal;
+border: none;
+border-collapse: collapse;
+width: 100%;
+max-width: 100%;
+white-space: nowrap;
+background-color: white;
+}
+
+table td, table th {
+text-align: center;
+padding: 8px;
+}
+
+table td {
+border-right: 1px solid #f8f8f8;
+font-size: 12px;
+}
+
+table th {
+color: #ffffff;
+background: #5b5b5b;
+}
+
+
+table th:nth-child(odd) {
+color: #ffffff;
+background: rgb(112, 112, 112);
+}
+
+table tr:nth-child(even) {
+background: #eeeded;
+}
+table a:hover {
+    background-color: #5b5b5b;
+    border-radius: 5px;
+}
+/* table a {
+    color: #18272F;
+    position : inherit;
+    text-decoration: none;
+  }
+  
+  table a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+  }
+  
+  table a:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  table a:hover::after{
+  } */
+/* Responsive */
+
+@media (max-width: 767px) {
+table {
+    display: block;
+    width: 100%;
+}
+.table-wrapper:before{
+    content: "Scroll horizontally >";
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: white;
+    padding: 0 0 10px;
+}
+table, table, table th {
+    display: block;
+}
+table th:last-child{
+    border-bottom: none;
+}
+table {
+    float: left;
+}
+table {
+    width: auto;
+    overflow-x: auto;
+}
+table td, table th {
+    padding: 20px .625em .625em .625em;
+    height: 60px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 120px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+}
+table th {
+    text-align: left;
+    border-bottom: 1px solid #f7f7f9;
+}
+table tr {
+    display: table-cell;
+}
+table tr:nth-child(odd) {
+    background: none;
+}
+table tr:nth-child(even) {
+    background: transparent;
+}
+table tr td:nth-child(odd) {
+    background: #F8F8F8;
+    border-right: 1px solid #E6E4E4;
+}
+table tr td:nth-child(even) {
+    border-right: 1px solid #E6E4E4;
+}
+table td {
+    display: block;
+    text-align: center;
+}
+}
+dialog {
+    display: block; 
+}
+
+dialog:not(:target):not([opens]) { 
+   display: none; 
+}
+
+
+
+
+
+/* homeアイコン */
+
+
+
+.text{
+    margin: 150px 0;
+}
+
+.text-center{
+    text-align: center;
+    size: 100px;
+}
+
+
+/* FontAwesome ----------------------------------------------------- */
+p i{
+    color:black;
+    
+}
+
+
+/* tooltip --------------------------------------------------------- */
+.tooltip { /* 補足説明するテキストのスタイル */
+    position: relative;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 3em;
+    font-weight:800;
+    color: #ff4646;
+    }
+    .description_top { /* ツールチップのスタイル */
+    width: 200px; /* 横幅 */
+    position: absolute;
+    left: 50%;
+    bottom: 80%; /* Y軸の位置 */
+    transform: translateX(-50%);
+    margin-bottom: 8px; /* テキストとの距離 */
+    padding: 8px;
+    border-radius: 10px; /* 角の丸み */
+    background-color: #666;
+    font-size: 0.7em;
+    color: #fff;
+    text-align: center;
+    visibility: hidden; /* ツールチップを非表示に */
+    opacity: 0; /* 不透明度を0％に */
+    z-index: 1;
+    transition: 0.5s all; /* マウスオーバー時のアニメーション速度 */
+    }
+    .tooltip:hover .description_top { /* マウスオーバー時のスタイル */
+    bottom: 100%; /* Y軸の位置 */
+    visibility: visible; /* ツールチップを表示 */
+    opacity: 1; /* 不透明度を100％に */
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
+    }
+    .btn{
+        width: 200px;
+        margin: 20px;
+        color: white;
+        background-color:deepskyblue;
+    }
+
+
+
+/* LINE006 */
+.button_line006  {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 220px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+.button_line006 a:before,
+.button_line006 a:after {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background: #000;
+}
+
+.button_line006 a:before {
+  top: 0;
+  left: 0;
+}
+
+.button_line006 a:after {
+  right: 0;
+  bottom: 0;
+}
+
+.button_line006 a:hover:before,
+.button_line006 a:hover:after {
+  width: 0;
+}
+
+
+.button_line006{
+    margin: 50px;
+    width: 250px;
+    font-size: large;
+}
+
+
+/* aタグ */
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover{
+    color: #000000;
+}

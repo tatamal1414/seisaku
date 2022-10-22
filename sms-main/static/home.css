@@ -1,0 +1,25 @@
+/* 全体 */
+.content{
+    display: flex;
+    padding: 20%;
+    width: 100%;
+
+}
+
+
+/* aタグ */
+a{
+    text-decoration: none;
+    color: #000000;
+    font-size: x-large;
+}
+a:hover{
+    color: #000000;
+}
+
+
+
+.select{
+    text-align: center;
+    padding: 30px 10px;
+}

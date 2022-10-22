@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <title>生徒の詳細画面</title>
+  <meta charset="utf-8">
+  <link href="" rel="stylesheet">
+</head>
+<body>
+  <a onclick="history.back()" class="">戻る</a>
+    <h2><br>学生詳細</h2>
+    <img src="/static/student_images/user.png" alt="" title="">
+    {{ params.student_id }}
+    {{ params.student_name }}
+    {{ params.department_name}}
+    {{ params.major_name}}専攻
+    {{ params.class_name}}
+    {{ params.age }}歳
+    性別:{{ params.gender }}
+    <img src="/{{ params.image }}" />
+
+    <!-- <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        出席率のグラフを選択
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+        <li><a class="dropdown-item" href="/view_profile/{{ params.student_id }}">出席率</a></li>
+      </ul>
+    </div> -->
+
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      {% if params.subject%}
+      {{params.subject }}を表示中
+      {% else %}
+      授業を選択
+      {% endif %}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      {% if params.subject_list %}
+      {% for subject in params.subject_list %}
+      <li><a class="dropdown-item" href="/view_profile/{{ params.student_id }}/score_graph_{{subject}}">{{ subject }}</a></li>
+      {% endfor %}
+      {% else %}
+      <li><a class="dropdown-item" href="">採点したテストがありません</a></li>
+      {% endif %}
+    </ul>
+    </div>
+
+</body>
+</html>
+

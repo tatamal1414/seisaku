@@ -1,0 +1,146 @@
+<<<<<<< HEAD
+database:
+	RDS for postgres
+
+
+language:
+	python HTML
+
+	
+create table score{
+	student_id
+	score
+	class
+}
+
+sites:
+	https://qiita.com/hoto17296/items/0ca1569d6fa54c7c4732#:~:text=psycopg2%20%E3%81%AF%20PEP%20249%20--%20Python%20Database%20API,Copied%21%20import%20psycopg2%20print%28psycopg2.apilevel%29%20%23%3D%3E%20%272.0%27.%20%E3%81%93%E3%82%8C%E3%81%AB%E3%82%88%E3%82%8A%E3%80%81MySQL%20%E3%81%AA%E3%81%A9%E3%81%AE%E4%BB%96%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%A8%E5%90%8C%E3%81%98%E3%82%88%E3%81%86%E3%81%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%84%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%97%E3%81%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%92%E8%A7%A6%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82.
+	https://www.sraoss.co.jp/tech-blog/pgsql/pgadmin4/
+	https://www.postgresql.org/download/windows/
+	https://postgresweb.com/post-192
+	https://postgresweb.com/how-to-create-database
+
+https://www.soudegesu.com/post/python/selenium-element-selector/
+
+https://qiita.com/Bashi50/items/e3459ca2a4661ce5dac6
+https://opacitycode.blogspot.com/
+sidebar osita toki 
+kuro siro gyakutenn kinou
+
+https://www.pexels.com/ja-jp/search/%E7%99%BD/
+https://www.pexels.com/ja-jp/photo/10526880/
+https://www.pexels.com/ja-jp/photo/1484759/
+https://www.pexels.com/ja-jp/@gabriela-palai-129458/
+https://www.pexels.com/ja-jp/photo/5707732/
+https://www.pexels.com/ja-jp/photo/12402496/
+https://www.istockphoto.com/jp/search/search-by-asset?affiliateredirect=true&assetid=684133544&assettype=image&utm_campaign=srp_photos_inline&utm_content=https%3A%2F%2Fwww.pexels.com%2Fsearch%2F%25E7%2599%25BD%2F&utm_medium=affiliate&utm_source=pexels&utm_term=%E7%99%BD
+https://www.pexels.com/ja-jp/photo/11254897/
+https://www.pexels.com/ja-jp/photo/7598536/
+丸山先生だけが新規ユーザー登録ができるようにする
+
+
+
+
+password hash
+https://www.youtube.com/watch?v=xIiNYn0q1gs
+https://tutorial101.blogspot.com/2021/04/python-flask-postgresql-login-register.html
+
+
+
+user image
+https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC-%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC/92824
+
+
+https://www.codingnepalweb.com/category/html-and-css/page/4/
+
+
+dropdown menu 
+https://www.codingnepalweb.com/drop-down-menu-bar-with-submenu/
+https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css-2/
+
+
+dialog:not(:target):not([open]) { display: none; }
+
+
+https://www.graphicpie.com/css-text-hover-effects/
+https://codemyui.com/tag/hover-animation/page/2/
+
+編集ボタンをICONにしてHOVERで文字を出す
+https://codemyui.com/social-icon-hover-to-show-social-media-handle/
+
+
+menu bar 
+=======
+database:
+	RDS for postgres
+
+
+language:
+	python HTML
+
+	
+create table score{
+	student_id
+	score
+	class
+}
+
+sites:
+	https://qiita.com/hoto17296/items/0ca1569d6fa54c7c4732#:~:text=psycopg2%20%E3%81%AF%20PEP%20249%20--%20Python%20Database%20API,Copied%21%20import%20psycopg2%20print%28psycopg2.apilevel%29%20%23%3D%3E%20%272.0%27.%20%E3%81%93%E3%82%8C%E3%81%AB%E3%82%88%E3%82%8A%E3%80%81MySQL%20%E3%81%AA%E3%81%A9%E3%81%AE%E4%BB%96%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%A8%E5%90%8C%E3%81%98%E3%82%88%E3%81%86%E3%81%AB%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%84%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%97%E3%81%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%92%E8%A7%A6%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82.
+	https://www.sraoss.co.jp/tech-blog/pgsql/pgadmin4/
+	https://www.postgresql.org/download/windows/
+	https://postgresweb.com/post-192
+	https://postgresweb.com/how-to-create-database
+
+https://www.soudegesu.com/post/python/selenium-element-selector/
+
+https://qiita.com/Bashi50/items/e3459ca2a4661ce5dac6
+https://opacitycode.blogspot.com/
+sidebar osita toki 
+kuro siro gyakutenn kinou
+
+https://www.pexels.com/ja-jp/search/%E7%99%BD/
+https://www.pexels.com/ja-jp/photo/10526880/
+https://www.pexels.com/ja-jp/photo/1484759/
+https://www.pexels.com/ja-jp/@gabriela-palai-129458/
+https://www.pexels.com/ja-jp/photo/5707732/
+https://www.pexels.com/ja-jp/photo/12402496/
+https://www.istockphoto.com/jp/search/search-by-asset?affiliateredirect=true&assetid=684133544&assettype=image&utm_campaign=srp_photos_inline&utm_content=https%3A%2F%2Fwww.pexels.com%2Fsearch%2F%25E7%2599%25BD%2F&utm_medium=affiliate&utm_source=pexels&utm_term=%E7%99%BD
+https://www.pexels.com/ja-jp/photo/11254897/
+https://www.pexels.com/ja-jp/photo/7598536/
+丸山先生だけが新規ユーザー登録ができるようにする
+
+
+
+
+password hash
+https://www.youtube.com/watch?v=xIiNYn0q1gs
+https://tutorial101.blogspot.com/2021/04/python-flask-postgresql-login-register.html
+
+
+
+user image
+https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC-%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC/92824
+
+
+https://www.codingnepalweb.com/category/html-and-css/page/4/
+
+
+dropdown menu 
+https://www.codingnepalweb.com/drop-down-menu-bar-with-submenu/
+https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css-2/
+
+
+dialog:not(:target):not([open]) { display: none; }
+
+
+https://www.graphicpie.com/css-text-hover-effects/
+https://codemyui.com/tag/hover-animation/page/2/
+
+編集ボタンをICONにしてHOVERで文字を出す
+https://codemyui.com/social-icon-hover-to-show-social-media-handle/
+
+
+menu bar 
+>>>>>>> 487df3b6295c1fb5ca21d80f6fc1e8e4bd493667
+https://codemyui.com/split-button-to-social-icons-on-hover/
