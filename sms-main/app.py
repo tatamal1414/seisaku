@@ -2,6 +2,7 @@
 
 from datetime import datetime
 import datetime
+from operator import iand
 from tabnanny import check
 import regex
 import psycopg2.extras
@@ -237,6 +238,7 @@ def student_list():
                         cursor.execute(f"select test_name from test where subject = %s order by id asc",(subject,))
                         tests = cursor.fetchall()
                         aaa = []
+                        valid = []
                         for i in tests:
                             if i not in aaa:
                                 aaa.append(i)
@@ -249,16 +251,17 @@ def student_list():
                         subject_ids = cursor.fetchall()
                         print(subject_ids,"subject_id")
                         for id in subject_ids:
-                            print(id[0],"id")
+                            print(id[0],"idddddddd")
                                     #データベースから値を選択
+                            print("a")
                             cursor.execute("select student_id, name, note, rate FROM student where subject_id = %s order by id asc", (id[0],))
                             student_db = cursor.fetchall()
-
+                            print(student_db,"student?db")
                             for student in student_db:
                                 if student not in students:
                                     students.append(student)
 
-
+                            print(students,"students")
                             cursor.execute("SELECT test_name, test_score, student_id FROM test where subject = %s order by id asc",(subject,))
                             test = cursor.fetchall()
 
@@ -273,18 +276,19 @@ def student_list():
                                 student_rate = ""
                             else:
                                 student_rate = row[3]
+                            if student_name not in valid:
+                                valid.append(student_name)
+                                students_list.append({"test":{}})
+                                students_list[len(students_list)-1]["name"] = student_name
+                                students_list[len(students_list)-1]["student_id"] = student_id
+                                students_list[len(students_list)-1]["rate"] = student_rate
+                                students_list[len(students_list)-1]["note"] = student_note
+                                for row2 in test:
+                                    test_name = row2[0]
+                                    test_score = row2[1]
 
-                            students_list.append({"test":{}})
-                            students_list[i]["name"] = student_name
-                            students_list[i]["student_id"] = student_id
-                            students_list[i]["note"] = student_note
-                            students_list[i]["rate"] = student_rate
-
-                            for row2 in test:
-                                test_score = row2[1]
-                                if row2[2] == students_list[i]["student_id"]:
-                                    
-                                    students_list[i]["test"][f"{row2[0]}"] = test_score
+                                    if row2[2] == students_list[len(students_list)-1]["student_id"]:
+                                        students_list[len(students_list)-1]["test"][f"{test_name}"] = test_score
                         
 
                             
@@ -319,6 +323,7 @@ def student_list():
                         cursor.execute(f"select test_name from test where subject = %s order by id asc",(subject,))
                         tests = cursor.fetchall()
                         aaa = []
+                        valid = []
                         for i in tests:
                             if i not in aaa:
                                 aaa.append(i)
@@ -331,7 +336,7 @@ def student_list():
                         subject_ids = cursor.fetchall()
                         print(subject_ids,"subject_id")
                         for id in subject_ids:
-                            print(id[0],"id")
+                            print(id[0],"idaaaaa")
                                     #データベースから値を選択
                             cursor.execute("select student_id, name, note, rate FROM student where subject_id = %s order by id asc", (id[0],))
                             student_db = cursor.fetchall()
@@ -343,7 +348,7 @@ def student_list():
 
                             cursor.execute("SELECT test_name, test_score, student_id FROM test where subject = %s order by id asc",(subject,))
                             test = cursor.fetchall()
-
+                        print(students)
                         for i, row in enumerate(students):
                             student_id = row[0]
                             student_name = row[1]
@@ -355,25 +360,27 @@ def student_list():
                                 student_rate = ""
                             else:
                                 student_rate = row[3]
+                            if student_name not in valid:
+                                print(valid,"valid starts")
+                                valid.append(student_name)
+                                print(valid, "valid end")
+                                students_list.append({"test":{}})
+                                students_list[len(students_list)-1]["name"] = student_name
+                                students_list[len(students_list)-1]["student_id"] = student_id
+                                students_list[len(students_list)-1]["rate"] = student_rate
+                                students_list[len(students_list)-1]["note"] = student_note
+                                for row2 in test:
+                                    test_name = row2[0]
+                                    test_score = row2[1]
 
-                            students_list.append({"test":{}})
-                            students_list[i]["name"] = student_name
-                            students_list[i]["student_id"] = student_id
-                            students_list[i]["note"] = student_note
-                            students_list[i]["rate"] = student_rate
-
-                            for row2 in test:
-                                
-                                test_score = row2[1]
-                                if row2[2] == students_list[i]["student_id"]:
-                                    
-                                    students_list[i]["test"][f"{row2[0]}"] = test_score
+                                    if row2[2] == students_list[len(students_list)-1]["student_id"]:
+                                        students_list[len(students_list)-1]["test"][f"{test_name}"] = test_score
                         
 
                             
                     except:
                         msg = "something went wrong in student_list"
-
+            print(students_list)
             params = {
                 "students": students_list,
                 "test_names": test_names,
@@ -434,12 +441,7 @@ def add_test():
                             msg = "同じテスト名は入力できません"
                     except:
                          msg = "something went wrong in add_test 1"
-            #     connection.commit()
-            # cursor.close()
-                                                    
 
-            # with connection:
-            #     with connection.cursor() as cursor:
                     try:
 
                         #テスト一覧の取得と格納
@@ -496,6 +498,7 @@ def add_test():
                     except:
                         print("db")
             #     # パラメータの設定
+                print(students_list)
                 params = {
                     "students" : students_list,
                     "test_names": test_names,
@@ -612,30 +615,21 @@ def edit_info():
             test_name_list = request.form.getlist("test_name")
             test_score_list = request.form.getlist("test_score")
             note_list = request.form.getlist("note")  
-            print(id_list)
-            print(note_list)
-            print(rate_list)
 
-            count = len(set(test_name_list))
-            
-            note_list = note_list * count
-            rate_list = rate_list * count
-            # id_list = id_list * count
-            print(note_list)
-            print(rate_list)
-            print(id_list)
+            count_tests = len(set(test_name_list))
+            id_list_for_test = []
             student_list = []
             for id in id_list:
                 if id not in student_list:
                     student_list.append(id)
-            new_rate = []
-            for rate in rate_list:
-                if rate not in new_rate:
-                    new_rate.append(rate)
+            for id in student_list:
+                for i in range(0,count_tests):
+                    id_list_for_test.append(id)
+
             with connection:         
                 with connection.cursor() as cursor:
                     for i, test_name in enumerate(test_name_list):
-                        cursor.execute("select major_id from student where student_id = %s",(id_list[i],))
+                        cursor.execute("select major_id from student where student_id = %s",(id_list_for_test[i],))
 
                         major_id = cursor.fetchall()
                         cursor.execute("select id from subjects where subject = %s and major_id = %s", (subject,major_id[0][0]))
@@ -649,23 +643,20 @@ def edit_info():
                                     if int(test_score_list[i][:-1]) >= 101:
                                         raise
                                     
-                                    cursor.execute(f"update test set test_score = %s where test_name = %s and student_id = %s and subject = %s",(int(test_score_list[i][:-1]), test_name, id_list[i], subject,))
+                                    cursor.execute(f"update test set test_score = %s where test_name = %s and student_id = %s and subject = %s",(int(test_score_list[i][:-1]), test_name, id_list_for_test[i], subject,))
                                 else:
                                     if int(test_score_list[i]) >= 101:
                                         raise
-                                    print("updateee")
-                                    cursor.execute(f"update test set test_score = %s where test_name = %s and student_id = %s and subject = %s",(int(test_score_list[i]), test_name, id_list[i], subject,))
+                                    cursor.execute(f"update test set test_score = %s where test_name = %s and student_id = %s and subject = %s",(int(test_score_list[i]), test_name, id_list_for_test[i], subject,))
                         except:
                             msg="点数を数字で正しく入力してください"
-                    print(student_list,"stu")
-                    print(new_rate)
-                    for j, rate in enumerate(new_rate):
-                        cursor.execute("select major_id from student where student_id = %s",(student_list[j],))
+                    for i, rate in enumerate(rate_list):
+                        cursor.execute("select major_id from student where student_id = %s",(student_list[i],))
                         major_id = cursor.fetchall()
                         cursor.execute("select id from subjects where subject = %s and major_id = %s", (subject,major_id[0][0]))
                         sub_id = cursor.fetchall()
-                        print(sub_id[0])
-                        cursor.execute(f"update student set rate = %s, note = %s where student_id = %s and subject_id = %s",(rate, note_list[j],student_list[j], sub_id[0],))
+                        for sub in sub_id:
+                            cursor.execute(f"update student set rate = %s, note = %s where student_id = %s and subject_id = %s",(rate, note_list[i],student_list[i], sub[0],))
                 connection.commit()
             cursor.close()
 
@@ -877,7 +868,8 @@ def view_profile(student_id):
                         print("b")
                         subject_name = cursor.fetchall()
                         subject_name = subject_name[0]
-                        subject_list.append(subject_name[0])
+                        if subject_name[0] not in subject_list:
+                            subject_list.append(subject_name[0])
                         cursor.execute("select test_name, test_score from test where subject = %s",(subject_name[0],))
                         tests = cursor.fetchall()
                         print(tests)
@@ -912,11 +904,17 @@ def histogram(student_id, subject):
         name_label = []
         score = []
         subject_list = []
+        tests = []
         with connection:
             with connection.cursor() as cursor:
                 
-                    cursor.execute("select test_name, test_score from test where subject = %s and student_id = %s",(subject,student_id,))
-                    tests = cursor.fetchall()
+                    cursor.execute("select test_name, test_score from test where subject = %s and student_id = %s order by id asc",(subject,student_id,))
+                    tests_db = cursor.fetchall()
+                    print(tests_db)
+
+                    for test in tests_db:
+                        if test not in tests:
+                            tests.append(test)
                     for test in tests:
                         test_name = test[0]
                         test_score = test[1]
@@ -1066,7 +1064,7 @@ def teacher_classes_setting():
             with connection:
                 with connection.cursor() as cursor:
                     if major != "0" and grade != "0"and teacher != "0":
-                        print("dododododo")
+
                         select_grade = grade
                         select_major = major 
                         select_teacher = teacher
@@ -1078,24 +1076,19 @@ def teacher_classes_setting():
                         cursor.execute("select subject from subjects where major_id = %s order by id asc",(major_id[0],))
                         subjects_db = cursor.fetchall()
                         for subject in subjects_db:
-                            subjects.append(subject[0])
+                            if subject[0] not in subjects:
+                                subjects.append(subject[0])
                         # 先生にすでに登録されている授業IDを取得
                         cursor.execute("select subject_id from teacher where name = %s and major_id = %s",(teacher, major_id[0],))
                         subject_ids = cursor.fetchall()
-                        print(subject_ids,"sv")
-                        print(subjects)
                         checked_subjects[f"{major}"] = []
                         for subject in subject_ids:
                             cursor.execute("select subject from subjects where id = %s", (subject[0],))
                             subjects_db = cursor.fetchall()
                             for subject2 in subjects_db:
-                                # for sub_list in checked_subjects.values():
-                                #     if subject2[0] not in sub_list:
-                                #         for major_list in checked_subjects.keys():
-                                # if major not in major_list:
                                 if subject2[0] not in checked_subjects[f"{major}"]:
                                     checked_subjects[f"{major}"].append(subject2[0])
-                        print(checked_subjects)
+
 
                     else:
                         msg = "選択されていない項目があります"
@@ -1116,8 +1109,7 @@ def teacher_classes_setting():
 
                     except:
                         print("something went wrong in teacher_classes_setting POST")
-                    print(subjects)
-                    print(checked_subjects)
+
                     params={
                         "teachers": teachers, #dbから講師一覧
                         "majors":majors,
@@ -1359,12 +1351,21 @@ def attendance_check():
         return render_template("attendance_check.html")
     if request.method=="POST":
         student_list = []
-        # radio_list = request.form.args
-        # print(radio_list)
+        attendance_list = request.form.getlist("attendance_div")
+        print(attendance_list)
+        d_today = datetime.date.today()
         subject = request.form["subject"]
+        try:
+            date = request.form["date"]
+            print(date)
+        except:
+            pass
+        
         params = {
-            "subject":subject
+            "subject":subject,
+            "today":d_today
         }
+        valid = []
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute("select id from subjects where subject = %s",(subject,))
@@ -1373,10 +1374,12 @@ def attendance_check():
                     cursor.execute("select student_id, name, name_sub from student where subject_id = %s", (subject_id[0],))
                     student_details = cursor.fetchall()
                     for student_detail in student_details:
-                        student_list.append({})
-                        student_list[len(student_list)-1]["student_id"] = student_detail[0]
-                        student_list[len(student_list)-1]["name"] = student_detail[1]
-                        student_list[len(student_list)-1]["name_sub"] = student_detail[2]
+                        if student_detail[0] not in valid:
+                            valid.append(student_detail[0])
+                            student_list.append({})
+                            student_list[len(student_list)-1]["student_id"] = student_detail[0]
+                            student_list[len(student_list)-1]["name"] = student_detail[1]
+                            student_list[len(student_list)-1]["name_sub"] = student_detail[2]
 
                 
             connection.commit()
@@ -1494,10 +1497,10 @@ def subject_register():
         grade = request.form["grade"]
         dow = request.form["dow"]
 
-        subject = subject + "(" + dow + "・"
+        subject = subject + "(" + dow + " "
         for i, timetable in enumerate(timetables):
             if i != len(timetables)-1:
-                subject = subject + str(timetable) + ","
+                subject = subject + str(timetable) + "・"
             else:
                 subject = subject + str(timetable)
 
@@ -1514,7 +1517,8 @@ def subject_register():
                     major_id = major_id[0]
 
 
-                    cursor.execute(f'insert into subject(subject, department_id, major_id, unit, timetable, grade, dow) values (%s,%s,%s,%s,%s,%s,%s);',(subject, department_id,major_id,unit,timetable,grade,dow))
+                    cursor.execute(f'insert into subjects(subject, department_id, major_id, unit, timetable, grade, dow) values (%s,%s,%s,%s,%s,%s,%s);',(subject, department_id,major_id,unit,timetable,grade,dow))
+                    params["msg"] = "授業を追加しました"
             connection.commit()
         cursor.close()
         return render_template("subject_register.html",params=params)

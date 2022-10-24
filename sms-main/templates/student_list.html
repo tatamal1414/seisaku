@@ -16,10 +16,10 @@
 
                 <form action="/display_select" method="POST" name="display_select">
                   <input type="hidden" name="subject" value="{{params.subject_name}}">
-                  <a href="javascript:display_select.submit()">戻る</a> 
+                  <a href="javascript:display_select.submit()" class="back">戻る</a> 
                 </form>
                 <!-- <a onclick="history.go('/display_select')" class="">戻る</a> -->
-                <h1><a name="subject">{{ params.subject_name }}の成績一覧</a></h1>
+                <h1 class="headline"><a name="subject">{{ params.subject_name }}の成績一覧</a></h1>
                 <h3 style="color: red;">{{ params.msg }}</h3>
 
                 <div class="flex">
@@ -54,7 +54,7 @@
                 <form action="/delete_test" method="POST" name="delete_test">
                           <!-- <input type="submit" class="btn btn-primary" value="テスト項目を削除"> -->
                           <input type="hidden" name="subject" value="{{ params.subject_name }}">
-                          <p class="button_line006"><a href="javascript:delete_test.submit()">削除</a></p>
+                          <p class="button_line006"><a href="javascript:delete_test.submit()">テストを削除</a></p>
                         </form>
                         <p class="button_line006"><a data-bs-toggle="modal" data-bs-target="#edit_test_names">テストの名前を編集</a></p>
                       </div>
@@ -136,7 +136,6 @@
                         <!-- <button type="submit" class="btn btn-primary">保存</button> -->
                 </div>
               <!-- <a href="javascript:edit_info.submit()">保存</a> -->
-              <button type="submit" class="btn btn-primary">保存</button>
               </form>
               <form action="/edit_test_name" method="POST" name="edit_test_name">
               <div class="edit">
@@ -170,6 +169,10 @@
                   </div>   
                 </form>    
                 </table>
+                <div class="button_ctt">
+                  <button type="submit" class="btn btn-primary">保存</button>
+                </div>
+
         </div>
         <div class="homeicon">
           <a href="home"><p class="text text-center"><span class="tooltip"><i class="fa-solid fa-house"></i><span class="description_top">Homeへ</span></span></p></a>

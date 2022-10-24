@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -136,7 +138,32 @@ dialog {
 dialog:not(:target):not([opens]) { 
    display: none; 
 }
-
+/* textarea {
+    width: 250px;
+    max-width: 470px;
+    height: 90px;
+    max-height: 110px;
+    padding: 15px;
+    
+    background: transparent;
+    outline: none;
+    
+    color: #726659;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    
+    border: solid 1px #b3aca7;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+  
+  textarea:hover {
+    background: #b3aca7;
+    color: #e2dedb;
+  } */
 
 /* homeアイコン */
 
@@ -258,4 +285,37 @@ a{
 }
 a:hover{
     color: #000000;
+}
+
+/* 保存ボタン */
+.button_ctt button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* 戻るボタン */
+.back{
+    font-size: 120%;
+}
+
+
+
+.headline{
+
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+.headline:before {
+    content:"Headline";
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    color: rgb(233, 108, 108, 0.4);
+    font-size: 60px;
+    font-family: luxus-brut, cursive;
+    font-style: italic;
+    z-index: -1;
 }

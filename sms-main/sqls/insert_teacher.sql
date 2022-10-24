@@ -55,7 +55,7 @@ values(
     'マルヤマ',
     18,
     '男性',
-	'0000'
+	'0909'
 );
 
 insert into teacher(

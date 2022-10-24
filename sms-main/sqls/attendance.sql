@@ -5,5 +5,5 @@ create table attendance (
     attendance_day date NOT NULL,
     subject_id int not null,
     FOREIGN KEY(subject_id) 
-    REFERENCES subjects(id),
+    REFERENCES subjects(id)
 );
