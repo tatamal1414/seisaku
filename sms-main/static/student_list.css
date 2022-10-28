@@ -243,6 +243,7 @@ p i{
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 600;
+    
 }
 .button_line006 a:before,
 .button_line006 a:after {
@@ -301,21 +302,26 @@ a:hover{
 
 
 
-.headline{
-
-    margin-top: 60px;
-    text-align: center;
-    position: relative;
+.headline {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+    font-size: xx-large;
 }
-.headline:before {
-    content:"Headline";
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-8deg);
-    color: rgb(233, 108, 108, 0.4);
-    font-size: 60px;
-    font-family: luxus-brut, cursive;
-    font-style: italic;
-    z-index: -1;
+
+.headline::before,
+.headline::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #000000;
+}
+
+.headline::before {
+	margin-right: 20px;
+}
+.headline::after {
+	margin-left: 20px;
 }
