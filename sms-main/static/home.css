@@ -10,7 +10,7 @@
 a{
     text-decoration: none;
     color: #000000;
-    font-size: x-large;
+    font-size: 100%;
 }
 a:hover{
     color: #000000;
@@ -36,6 +36,8 @@ a:hover{
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
     
 }
 .button_line006 a:before,
@@ -72,7 +74,11 @@ a:hover{
 }
 
 
+
+
 .content{
     display: flex;
     justify-content: center;
 }
+
+

@@ -9,27 +9,31 @@
   <link href="../static/subject_select.css" rel="stylesheet">
 </head>
 <body>
+  <div class="log">
     <a onclick="history.back()" class="">戻る</a>
     <a href="/logout">ログアウト</a>
+  </div>
 
     <!-- if user == 000000 -->
 
 
     <!-- else -->
-    {% if params.subject_list | length == 1 %}
-    {% for subject in params.subject_list %}
-    <form action="/display_select" method="POST" name="form2">
-      <input type="hidden" name="subject" value="{{ subject }}">
-      <a href="javascript:form2.submit()">{{subject}}</a>
-    </form>
-    {% endfor %}
-    {% else %}
-    {% for subject in params.subject_list %}
-    <form action="/display_select" method="POST" name="form2">
-      <input type="hidden" name="subject" value="{{ subject }}">
-      <a href="javascript:form2[{{loop.index0}}].submit()">{{subject}}</a>
-    </form>
-    {% endfor %}
-    {% endif %}
+    <div class="content">
+      {% if params.subject_list | length == 1 %}
+      {% for subject in params.subject_list %}
+          <form action="/display_select" method="POST" name="form2">
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <p class="button_line006"><a href="javascript:form2.submit()">{{subject}}</a></p>
+          </form>
+      {% endfor %}
+      {% else %}
+      {% for subject in params.subject_list %}
+          <form action="/display_select" method="POST" name="form2">
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <p class="button_line006"><a href="javascript:form2[{{loop.index0}}].submit()">{{subject}}</a></p>
+          </form>
+      {% endfor %}
+      {% endif %}
+    </div>
 </body>
 </html>
