@@ -7,10 +7,13 @@
   
   <title>生徒の詳細画面</title>
   <meta charset="utf-8">
-  <link href="" rel="stylesheet">
+  <link href="../static/student_detail.css" rel="stylesheet">
 </head>
 <body>
-  <a onclick="history.back()" class="">戻る</a>
+  <div class="content2">
+    <a onclick="history.back()" >戻る</a>
+    <a href="/logout">ログアウト</a>
+  </div>
     <h2><br>学生詳細</h2>
     <img src="/static/student_images/user.png" alt="" title="">
     {{ params.student_id }}

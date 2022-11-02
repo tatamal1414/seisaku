@@ -11,10 +11,10 @@ a{
     text-decoration: none;
     color: #000000;
     font-size: 100%;
-}
+  }
 a:hover{
     color: #000000;
-}
+  }
 
 
 
@@ -32,7 +32,7 @@ a:hover{
     align-items: center;
     margin: 0 auto;
     max-width: 220px;
-    padding: 10px 25px;
+    padding: 10px 65px;
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 600;
@@ -82,3 +82,7 @@ a:hover{
 }
 
 
+
+body{
+  overflow: hidden;
+}
