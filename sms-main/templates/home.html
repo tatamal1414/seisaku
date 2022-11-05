@@ -10,15 +10,16 @@
   <link href="../static/home.css" rel="stylesheet">
 </head>
 <body>
-  <a href="/logout" type="button">ログアウト</a>
+  <a href="/logout" type="button" class="submit">ログアウト</a>
   <div class="content">
     <!-- <button onclick="history.back()" class="">戻る</button> -->
     <p class="button_line006"><a href="/subject_select">授業選択</a></p>
     {% if params.user == "000000" %}
-    <p class="button_line006"><a href="/register">講師登録</a>
+    <p class="button_line006"><a href="/register">講師登録</a></p>
     <p class="button_line006"><a href="/teacher_classes_setting">各講師担当授業</a></p>
     <p class="button_line006"><a href="/student_register">新年度学生登録</a></p>
-    <p class="button_line006"><a href="/subject_register">授業登録</a></p>
+    <p class="button_line006"><a href="/subject_register">新規授業登録</a></p>
+    <p class="button_line006"><a href="/student_class_assignment">学生授業割り当て</a></p>
     {% endif %}
   </div>
 </body>

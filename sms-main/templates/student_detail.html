@@ -7,7 +7,7 @@
   
   <title>生徒の詳細画面</title>
   <meta charset="utf-8">
-  <link href="../static/student_detail.css" rel="stylesheet">
+  <link href="" rel="stylesheet">
 </head>
 <body>
   <div class="content2">
@@ -23,17 +23,18 @@
     {{ params.class_name}}
     {{ params.age }}歳
     性別:{{ params.gender }}
+    今年度取得予定単位数:{{params.total_unit}}
     <img src="/{{ params.image }}" />
 
-    <!-- <div class="dropdown">
+    <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         出席率のグラフを選択
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
-        <li><a class="dropdown-item" href="/view_profile/{{ params.student_id }}">出席率</a></li>
+        <li><a class="dropdown-item" href="/view_profile/{{ params.student_id }}/attendance_graph">出席率</a></li>
       </ul>
-    </div> -->
+    </div>
 
     <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

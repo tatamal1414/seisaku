@@ -10,7 +10,7 @@
 a{
     text-decoration: none;
     color: #000000;
-    font-size: 100%;
+    font-size: 95%;
   }
 a:hover{
     color: #000000;
@@ -30,9 +30,9 @@ a:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px;
     max-width: 220px;
-    padding: 10px 65px;
+    padding: 10px 55px;
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 600;
@@ -68,7 +68,6 @@ a:hover{
 
 
 .button_line006{
-    margin: 50px;
     width: 250px;
     font-size: large;
 }
@@ -76,13 +75,7 @@ a:hover{
 
 
 
-.content{
-    display: flex;
-    justify-content: center;
-}
-
-
-
-body{
-  overflow: hidden;
+.submit{
+    font-size: 25px;
+    
 }

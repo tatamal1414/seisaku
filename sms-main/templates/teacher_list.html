@@ -11,16 +11,18 @@
     <title>Document</title>
 </head>
 <body>
+  <div class="container">
   {{params.msg}}
   <div class="content2">
-    <a onclick="history.back()" >戻る</a>
-    <a href="/logout">ログアウト</a>
+    <a onclick="history.back()" class="submit">戻る</a>
+    <a href="/logout" class="submit">ログアウト</a>
   </div>
-  <form action="/teacher_classes_setting" method="POST" name="tcs">
+    <form action="/teacher_classes_setting" method="POST" name="tcs">
+    <div class="mb-3">
       <select class="form-select" aria-label="Default select example" name="teacher">
 
         {% if params.select_teacher == "講師選択" %}
-        <option value="0" selected>{{params.select_teacher}}</option>
+        <option value="講師選択" selected>{{params.select_teacher}}</option>
         {% else %}
         <option value="{{params.select_teacher}}" selected>{{params.select_teacher}}  を選択中</option>
         {% endif %}
@@ -28,9 +30,11 @@
         <option value="{{ teacher }}">{{teacher}}</option>
         {% endfor %}
       </select>
+      </div>
+      <div class="mb-3">
       <select class="form-select" aria-label="Default select example" name="grade">
         {% if params.select_grade == "学年選択" %}
-        <option value="0" selected>{{params.select_grade}}</option>
+        <option value="学年選択" selected>{{params.select_grade}}</option>
         {% else %}
         <option value="{{params.select_grade}}" selected>{{params.select_grade}}  を選択中</option>
         {% endif %}
@@ -39,11 +43,12 @@
         <option value="3年生">3年生</option>
         <option value="4年生">4年生</option>
       </select>
-
+    </div>
+      <div class="mb-3">
       <select class="form-select" aria-label="Default select example" name="major">
 
         {% if params.select_major == "専攻選択" %}
-        <option value="0" selected>{{params.select_major}}</option>
+        <option value="専攻選択" selected>{{params.select_major}}</option>
         {% else %}
         <option value="{{params.select_major}}" selected>{{params.select_major}}  を選択中</option>
         {% endif %}
@@ -51,10 +56,11 @@
         <option value="{{ major }}">{{major}}</option>
         {% endfor %}
       </select>
-      <a href="javascript:tcs.submit()">適用</a>
+      <a href="javascript:tcs.submit()" class="submit">適用</a>
       <!-- <button type="submit" class="btn btn-primary">適用</button> -->
     </form>
-
+  </div>
+    <div class="mb-3">
     <h4>授業</h4>
     <form action="/form_check" method="POST" name="form_check">
     {% for subject in params.subjects %}
@@ -83,9 +89,11 @@
     {% endfor %} 
     {% endfor %}
 
-    <a href="javascript:form_check.submit()">設定完了</a>
+    <a href="javascript:form_check.submit()" class="submit">設定完了</a>
     <!-- <button type="submit" class="btn btn-primary">設定完了</button> -->
     </form>
+  </div>
+</div>
 </body>
 </html>
 

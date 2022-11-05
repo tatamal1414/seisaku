@@ -347,13 +347,22 @@ p i{
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    /* background-color: #56c4ff; */
-}
+
 .text{
     margin: 150px 0;
 }
 .text-center{
     text-align: center;
     size: 100px;
+}
+
+
+.submit{
+    font-size: 25px;
+}
+
+
+.contenta{
+    display: flex;
+    justify-content: space-between;
 }

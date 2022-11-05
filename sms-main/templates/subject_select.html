@@ -10,30 +10,28 @@
 </head>
 <body>
   <div class="log">
-    <a onclick="history.back()" class="">戻る</a>
-    <a href="/logout">ログアウト</a>
+    <a onclick="history.back()" class="submit">戻る</a>
+    <a href="/logout" class="submit">ログアウト</a>
   </div>
-
-    <!-- if user == 000000 -->
-
-
-    <!-- else -->
-    <div class="content">
-      {% if params.subject_list | length == 1 %}
-      {% for subject in params.subject_list %}
-          <form action="/display_select" method="POST" name="form2">
-            <input type="hidden" name="subject" value="{{ subject }}">
-            <p class="button_line006"><a href="javascript:form2.submit()">{{subject}}</a></p>
-          </form>
-      {% endfor %}
-      {% else %}
-      {% for subject in params.subject_list %}
-          <form action="/display_select" method="POST" name="form2">
-            <input type="hidden" name="subject" value="{{ subject }}">
-            <p class="button_line006"><a href="javascript:form2[{{loop.index0}}].submit()">{{subject}}</a></p>
-          </form>
-      {% endfor %}
-      {% endif %}
-    </div>
+  <div class="headline">
+    <h1>授業選択</h1>
+  </div>
+  <div class="content">
+    {% if params.subject_list | length == 1 %}
+    {% for subject in params.subject_list %}
+    <form action="/display_select" method="POST" name="form2">
+      <input type="hidden" name="subject" value="{{ subject }}">
+      <p class="button_line006"><a href="javascript:form2.submit()">{{subject}}</a></p>
+    </form>
+    {% endfor %}
+    {% else %}
+    {% for subject in params.subject_list %}
+    <form action="/display_select" method="POST" name="form2">
+      <input type="hidden" name="subject" value="{{ subject }}">
+      <p class="button_line006"><a href="javascript:form2[{{loop.index0}}].submit()">{{subject}}</a></p>
+    </form>
+    {% endfor %}
+    {% endif %}
+  </div>
 </body>
 </html>

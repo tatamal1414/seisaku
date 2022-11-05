@@ -1,7 +1,7 @@
 a{
     text-decoration: none;
     color: #000000;
-    font-size: x-large;
+    font-size: large;
 }
 a:hover{
     color: #000000;
@@ -16,7 +16,7 @@ a:hover{
 	align-items: center;
 	font-size: 26px;
 	text-align: center;
-    font-size: large;
+    font-size: 30px;
 }
 
 .headline::before,
@@ -96,4 +96,12 @@ a:hover{
 .content2{
     display: flex;
     justify-content: space-between;
+}
+
+h1{
+  font-size: 30px;
+}
+
+.submit{
+    font-size: 25px;
 }
