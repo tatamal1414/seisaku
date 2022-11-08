@@ -8,7 +8,10 @@
   <link href="static/attendance_check.css" rel="stylesheet">
 </head>
 <body>
-
+    <div class="content">
+        <a onclick="history.back()" class="submit">戻る</a>
+        <a href="/logout" class="submit">ログアウト</a>
+    </div>
     <div class="container">
         <header>
             <h1 class="headline">{{params.subject}}の出欠確認</h1>
@@ -68,7 +71,7 @@
                 <label class="form-check-label" for="inlineRadio6">6</label>
             </div>
             </div>
-            <a href="javascript:attendance_check.submit()" class="submit">送信</a>
+            <a href="javascript:attendance_check.submit()" class="bn3637 bn36">送信</a>
         </form>
     </div>
 </body>
