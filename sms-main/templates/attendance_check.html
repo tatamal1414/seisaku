@@ -25,9 +25,9 @@
                 <input type="hidden" name="student_id" value="{{student.student_id}}">
                 <input type="hidden" name="name" value="{{student.name}}">
                 <input type="hidden" name="name_sub" value="{{student.name_sub}}">
-                {{student.student_id}}
-                {{student.name}}
-                {{student.name_sub}}
+                <div class="id">{{student.student_id}}</div>
+                <div class="name">{{student.name}}</div>
+                <div class="name_sub">{{student.name_sub}}</div>
                     <input type="radio" id="attend" name="attendance_{{student.student_id}}" value="出席" class="radio">
                     <label class="label label-1" for="attend">出席</label>
                     <input type="radio" id="absence" name="attendance_{{student.student_id}}" value="欠席" class="radio">

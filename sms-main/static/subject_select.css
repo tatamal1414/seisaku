@@ -111,10 +111,12 @@ h1{
 
 
 img{
-  width: 8%;
+  width: 6%;
   margin: auto;
+
 }
 
 .homeicon{
   display: flex;
+
 }

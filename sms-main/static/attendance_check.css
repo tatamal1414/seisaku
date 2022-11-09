@@ -87,9 +87,14 @@ label{
 }
 
 
-label{
-
+.id{
+    display: inline;
 }
-
+.name{
+    display: inline;
+}
+.name_sub{
+    display: inline;
+}
 
 
