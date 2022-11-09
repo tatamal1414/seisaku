@@ -47,3 +47,7 @@ img{
   display: flex;
   justify-content: space-between;
 }
+
+.submit{
+  font-size: 25px;
+}
