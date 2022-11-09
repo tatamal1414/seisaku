@@ -105,3 +105,14 @@ h1{
 .submit{
     font-size: 25px;
 }
+
+
+
+img{
+  width: 8%;
+  margin: auto;
+}
+
+.homeicon{
+  display: flex;
+}

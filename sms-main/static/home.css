@@ -10,7 +10,7 @@
 a{
     text-decoration: none;
     color: #000000;
-    font-size: 95%;
+    font-size: 90%;
   }
 a:hover{
     color: #000000;
@@ -32,7 +32,7 @@ a:hover{
     align-items: center;
     margin: 20px;
     max-width: 220px;
-    padding: 10px 55px;
+    padding: 10px 45px;
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 600;
