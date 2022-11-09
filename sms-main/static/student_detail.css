@@ -17,3 +17,33 @@ img{
 .homeicon{
     display: flex;
 }
+
+
+.headline {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+    font-size: 30px;
+}
+
+.headline::before,
+.headline::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #000000;
+}
+
+.headline::before {
+	margin-right: 20px;
+}
+.headline::after {
+	margin-left: 20px;
+}
+
+.content2{
+  display: flex;
+  justify-content: space-between;
+}

@@ -20,25 +20,27 @@
 
         <form action="/attendance_check" method="POST" name="attendance_check">
             <input type="hidden" name="subject" value="{{params.subject}}">
-            {% for student in params.student_list %}
-            <input type="hidden" name="student_id" value="{{student.student_id}}">
-            <input type="hidden" name="name" value="{{student.name}}">
-            <input type="hidden" name="name_sub" value="{{student.name_sub}}">
-            {{student.student_id}}
-            {{student.name}}
-            {{student.name_sub}}
-                <input type="radio" id="attend" name="attendance_{{student.student_id}}" value="出席" class="radio">
-                <label class="label label-1" for="attend">出席</label>
-                <input type="radio" id="absence" name="attendance_{{student.student_id}}" value="欠席" class="radio">
-                <label class="label label-2" for="absence">欠席</label>        
-                <input type="radio" id="official_absence" name="attendance_{{student.student_id}}" value="公欠" class="radio">
-                <label class="label label-3" for="official_absence">公欠</label>
-                <input type="radio" id="tardy" name="attendance_{{student.student_id}}" value="遅刻" class="radio">
-                <label class="label label-4" for="tardy">遅刻</label>
-                <input type="radio" id="left_early" name="attendance_{{student.student_id}}" value="早退" class="radio">
-                <label class="label label-5" for="left_early">早退</label>
-            <br>
-            {%endfor%}
+            <table>
+                {% for student in params.student_list %}
+                <input type="hidden" name="student_id" value="{{student.student_id}}">
+                <input type="hidden" name="name" value="{{student.name}}">
+                <input type="hidden" name="name_sub" value="{{student.name_sub}}">
+                {{student.student_id}}
+                {{student.name}}
+                {{student.name_sub}}
+                    <input type="radio" id="attend" name="attendance_{{student.student_id}}" value="出席" class="radio">
+                    <label class="label label-1" for="attend">出席</label>
+                    <input type="radio" id="absence" name="attendance_{{student.student_id}}" value="欠席" class="radio">
+                    <label class="label label-2" for="absence">欠席</label>        
+                    <input type="radio" id="official_absence" name="attendance_{{student.student_id}}" value="公欠" class="radio">
+                    <label class="label label-3" for="official_absence">公欠</label>
+                    <input type="radio" id="tardy" name="attendance_{{student.student_id}}" value="遅刻" class="radio">
+                    <label class="label label-4" for="tardy">遅刻</label>
+                    <input type="radio" id="left_early" name="attendance_{{student.student_id}}" value="早退" class="radio">
+                    <label class="label label-5" for="left_early">早退</label>
+                <br>
+                {%endfor%}
+            </table>
             <div class="mb-3">
             <label>日付：</label>
             <input type="date" name="date" value="{{params.today}}">
