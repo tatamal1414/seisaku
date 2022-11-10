@@ -87,7 +87,8 @@ a:hover{
   align-items: center;
   font-size: 26px;
   text-align: center;
-    font-size: 30px;
+  font-size: 30px;
+  margin-bottom: 2%;
 }
 
 .headline::before,
@@ -122,6 +123,8 @@ a:hover{
   backface-visibility: hidden;
   border: 0.2rem solid transparent;
   border-radius: 3rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .bn36 {
@@ -142,4 +145,13 @@ img{
 
 .homeicon{
   display: flex;
+}
+
+
+.container{
+  margin-top: 8%;
+}
+
+.form-select{
+  margin-bottom: 3%;
 }

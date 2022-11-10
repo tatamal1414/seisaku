@@ -385,6 +385,7 @@ p i{
     backface-visibility: hidden;
     border: 0.2rem solid transparent;
     border-radius: 3rem;
+    margin-bottom: 2%;
   }
   
   .bn36 {
@@ -412,3 +413,13 @@ img{
 
 
 
+h3{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.content{
+    margin-top: 8%;
+}

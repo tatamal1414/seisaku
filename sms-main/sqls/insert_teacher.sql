@@ -16,7 +16,7 @@ values(
     '女性',
     1,
 	1,
-	'0713'
+	'$2b$12$pZ4VjLKzarfyLMxkROAu2.k5axzw..e2HhcS1MO5Ew9ApKjUMcZ3K'
 );
 
 insert into teacher(
@@ -37,7 +37,7 @@ values(
     '女性',
     2,
 	2,
-	'0713'
+	'$2b$12$pZ4VjLKzarfyLMxkROAu2.k5axzw..e2HhcS1MO5Ew9ApKjUMcZ3K'
 );
 
 insert into teacher(
@@ -55,7 +55,7 @@ values(
     'マルヤマ',
     18,
     '男性',
-	'0909'
+	'$2b$12$rZEeJQx9lJc0TS/uLnbsSOm0pw90FtP97tcb61EvBMXpVBh/kjEwi'
 );
 
 insert into teacher(
@@ -72,5 +72,5 @@ values(
     'オリタミヨコ',
     18,
     '女性',
-	'0713'
+	'$2b$12$pZ4VjLKzarfyLMxkROAu2.k5axzw..e2HhcS1MO5Ew9ApKjUMcZ3K'
 );

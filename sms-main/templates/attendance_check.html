@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="content">
-        <a onclick="history.back()" class="submit">戻る</a>
+        <!-- <a onclick="history.back()" class="submit">戻る</a> -->
         <a href="/logout" class="submit">ログアウト</a>
     </div>
     <div class="container">
@@ -20,14 +20,14 @@
 
         <form action="/attendance_check" method="POST" name="attendance_check">
             <input type="hidden" name="subject" value="{{params.subject}}">
-            <table>
                 {% for student in params.student_list %}
                 <input type="hidden" name="student_id" value="{{student.student_id}}">
                 <input type="hidden" name="name" value="{{student.name}}">
                 <input type="hidden" name="name_sub" value="{{student.name_sub}}">
-                <div class="id">{{student.student_id}}</div>
-                <div class="name">{{student.name}}</div>
-                <div class="name_sub">{{student.name_sub}}</div>
+                <div class="tbl">
+                    <div class="id">{{student.student_id}}</div>
+                    <div class="name">{{student.name}}</div>
+                    <div class="name_sub">{{student.name_sub}}</div>
                     <input type="radio" id="attend" name="attendance_{{student.student_id}}" value="出席" class="radio">
                     <label class="label label-1" for="attend">出席</label>
                     <input type="radio" id="absence" name="attendance_{{student.student_id}}" value="欠席" class="radio">
@@ -38,9 +38,10 @@
                     <label class="label label-4" for="tardy">遅刻</label>
                     <input type="radio" id="left_early" name="attendance_{{student.student_id}}" value="早退" class="radio">
                     <label class="label label-5" for="left_early">早退</label>
-                <br>
+                    <br>
+                </div>
                 {%endfor%}
-            </table>
+                
             <div class="mb-3">
             <label>日付：</label>
             <input type="date" name="date" value="{{params.today}}">
@@ -75,9 +76,10 @@
             </div>
             <a href="javascript:attendance_check.submit()" class="bn3637 bn36">送信</a>
         </form>
-    </div>
+    
     <a href="home" class="homeicon">
         <img src="../static/home_img/home.png" alt="home">
     </a>
+    </div>
 </body>
 </html>

@@ -87,3 +87,8 @@ margin: auto;
 .homeicon{
     display: flex;
 }
+
+
+.container{
+    margin-top: 8%;
+}

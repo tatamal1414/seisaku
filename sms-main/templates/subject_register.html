@@ -9,13 +9,13 @@
 </head>
 <body>
   <div class="content2">
-    <a onclick="history.back()" class="submit">戻る</a>
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
     <a href="/logout" class="submit">ログアウト</a>
   </div>
   <div class="container">
     <h1 class="headline">授業の追加</h1>
     <p>{{ params.msg }}</p>
-  <form action="/subject_register" method="POST" name="register">
+    <form action="/subject_register" method="POST" name="register">
 
     <div class="mb-3">
       <label for="name" class="form-label">授業名</label>
@@ -105,9 +105,10 @@
     </div>
     <a href="javascript:register.submit()" class="bn3637 bn36">登録</a>
   </form>
+
+  <a href="home" class="homeicon">
+    <img src="../static/home_img/home.png" alt="home">
+  </a>
 </div>
-<a href="home" class="homeicon">
-  <img src="../static/home_img/home.png" alt="home">
-</a>
 </body>
 </html>

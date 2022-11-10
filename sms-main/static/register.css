@@ -60,7 +60,8 @@ label{
     align-items: center;
     font-size: 26px;
     text-align: center;
-      font-size: 30px;
+    font-size: 30px;
+
   }
   
   .headline::before,
@@ -78,3 +79,16 @@ label{
     margin-left: 20px;
   }
   
+.container{
+  margin-top: 6%;
+}
+
+
+img{
+  width: 8%;
+  margin: auto;
+}
+
+.homeicon{
+  display: flex;
+}

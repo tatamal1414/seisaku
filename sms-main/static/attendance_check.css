@@ -89,12 +89,34 @@ label{
 
 .id{
     display: inline;
+    padding: 2%;
 }
 .name{
     display: inline;
+    padding: 2%;
 }
 .name_sub{
     display: inline;
+    padding: 2%;
 }
 
+
+label{
+    padding: 2%;
+}
+
+.container{
+    margin-top: 8%;
+}
+
+
+
+
+html,body{
+    overflow: hidden;
+}
+
+.tbl{
+    border: 1px solid black;
+}
 

@@ -8,7 +8,7 @@ insert into subjects(
     dow
     )
 values(
-    'システム開発(木 ２・３限)-3',
+    'システム開発(木 ２・３限)-3年',
     1,
     1,
     2,
@@ -26,7 +26,7 @@ insert into subjects(
     dow
     )
 values(
-    'システム開発(木 ２・３限)-3',
+    'システム開発(木 ２・３限)-3年',
     1,
     1,
     2,
@@ -44,7 +44,7 @@ insert into subjects(
     dow
     )
 values(
-    'システム開発(木 ２・３限)-3',
+    'システム開発(木 ２・３限)-3年',
     1,
     2,
     2,
@@ -62,7 +62,7 @@ insert into subjects(
     dow
     )
 values(
-    'システム開発(木 ２・３限)-3',
+    'システム開発(木 ２・３限)-3年',
     1,
     2,
     2,
@@ -81,7 +81,7 @@ insert into subjects(
     dow
     )
 values(
-    '数学-3',
+    '数学(水 １限)-3年',
     1,
     2,
     4,

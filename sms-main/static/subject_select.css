@@ -67,6 +67,10 @@ a:hover{
 .content{
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 
@@ -119,4 +123,14 @@ img{
 .homeicon{
   display: flex;
 
+}
+
+
+.container{
+  margin-top: 8%;
+}
+
+
+.whole{
+  margin-top: 8%;
 }

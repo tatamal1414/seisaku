@@ -116,3 +116,11 @@ img{
 .homeicon{
   display: flex;
 }
+
+.whole{
+  margin-top: 8%;
+}
+
+html.body{
+  overflow: hidden;
+}

@@ -9,15 +9,16 @@
 </head>
 <body>
   <div class="content2">
-    <a onclick="history.back()" class="submit">戻る</a>
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
     <a href="/logout" class="submit">ログアウト</a>
   </div>
+  <div class="container">
   <div class="headline">
     <h1>新規ユーザー登録画面</h1>
   </div>
   <p>{{ params.msg }}</p>
   <!-- <a onclick="history.back()" class="">戻る</a> -->
-  <div class="container">
+  
   <form action="/register" method="POST" name="register">
     <div class="mb-3">
       <label for="name" class="form-label">講師名</label>
@@ -51,6 +52,9 @@
     <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     <a href="javascript:register.submit()" class="bn3637 bn36">登録</a>
   </form>
+  <a href="home" class="homeicon">
+    <img src="../static/home_img/home.png" alt="home">
+  </a>
 </div>
 </body>
 </html>

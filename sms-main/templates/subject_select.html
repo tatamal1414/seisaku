@@ -10,9 +10,10 @@
 </head>
 <body>
   <div class="log">
-    <a onclick="history.back()" class="submit">戻る</a>
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
     <a href="/logout" class="submit">ログアウト</a>
   </div>
+  <div class="whole">
   <div class="headline">
     <h1>授業選択</h1>
   </div>
@@ -33,8 +34,9 @@
     {% endfor %}
     {% endif %}
   </div>
-  <a href="home" class="homeicon">
+  <a href="/home" class="homeicon">
     <img src="../static/home_img/home.png" alt="home">
   </a>
+</div>
 </body>
 </html>

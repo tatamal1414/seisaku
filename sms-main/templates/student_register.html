@@ -9,13 +9,14 @@
 </head>
 <body>
   <div class="content2">
-    <a onclick="history.back()" class="submit">戻る</a>
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
     <a href="/logout" class="submit">ログアウト</a>
   </div>
+  <div class="container">
   <h1 class="headline">学生登録</h1>
   <p>{{ params.msg }}</p>
   <!-- <a onclick="history.back()" class="">戻る</a> -->
-  <div class="container">
+  
   <form action="/student_register" method="POST" name="register">
     <div class="mb-3">
       <label for="student_id" class="form-label">学籍番号</label>
@@ -39,6 +40,18 @@
       <input type="text" class="form-control" name="age" id ="exampleInputAge1" value="{{ params.age }}" required>
     </div>
     <div class="mb-3">
+      <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" name="grade">
+    
+            <option selected>学年</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+    
+        </select>
+    </div>
+
     <select class="form-select" aria-label="Default select example" name="department">
 
         {% if params.select_department == "学科選択" %}

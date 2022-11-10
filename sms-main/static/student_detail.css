@@ -14,6 +14,15 @@ img{
   margin: auto;
 }
 
+img.img_student{
+  width: 100%;
+}
+
+img.graph { 
+  width:100%;
+  display: flex;
+
+}
 .homeicon{
     display: flex;
 }
@@ -23,9 +32,9 @@ img{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 26px;
-	text-align: center;
-    font-size: 30px;
+	font-size: 40px;
+	text-align: center;;
+  padding-bottom: 4%;
 }
 
 .headline::before,
@@ -50,4 +59,41 @@ img{
 
 .submit{
   font-size: 25px;
+}
+
+
+
+
+
+.st{
+  padding-left:5% ;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  margin-top: 6%;
+}
+
+
+
+
+.dropdowns{
+  justify-content: center;
+  padding-left: 13%;
+}
+
+
+.detail{
+  padding-right: 25%;
+}
+
+h2{
+  font-size: 90%;
+}
+
+.param{
+  padding-top: 10%;
+  /* font-size: large; */
+  font-weight: bold;
 }
