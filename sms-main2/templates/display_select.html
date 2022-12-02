@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表示選択画面</title>
+  <meta charset="utf-8">
+  <link href="/static/display_select.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>{{params.subject}}</h1>
+    </div>
+    <div class="maining">
+      <video src="/static/video_img/ã_¤ã_³ã__ã__ - 81605.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </header>
+  <div class="content2">
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
+    <a href="/logout" class="submit">ログアウト</a>
+  </div>
+  <div class="whole">
+  <div class="headline">
+    <h1>{{params.subject}}</h1>
+  </div>
+  <div class="content">
+    <form action="/attendance_check" method="POST" name="attendance_check">
+      <input type="hidden" name="subject" value="{{ params.subject }}">
+      <p class="button_line006"><a href="javascript:attendance_check.submit()">出欠確認</a></p>
+    </form> 
+
+
+    <form action="/student_list" method="POST" name="student_list">
+    <input type="hidden" name="subject" value="{{ params.subject }}">
+    <p class="button_line006"><a href="javascript:student_list.submit()">成績管理</a></p>
+  </form> 
+  </div>
+  
+  <a href="home" class="homeicon">
+    <img src="../static/home_img/home.png" alt="home">
+  </a>
+</div>
+</body>
+</html>

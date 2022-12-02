@@ -1,0 +1,19 @@
+
+pip install psycopg2
+pip install flask 
+pip install japanize_matplotlib
+pip install regex
+pip install pandas
+pip install numpy
+pip install bcrypt
+
+
+
+
+bootstrap https://getbootstrap.com/docs/5.0/getting-started/introduction/
+
+
+    学生追加機能
+    授業追加機能
+    飛び級機能
+

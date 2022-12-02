@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新規授業登録</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/subject_register.css">
+</head>
+<body>
+  <div class="content2">
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
+    <a href="/logout" class="submit">ログアウト</a>
+  </div>
+  <div class="container">
+    <h1 class="headline">新規授業登録</h1>
+    <p>{{ params.msg }}</p>
+    <form action="/subject_register" method="POST" name="register">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">授業名</label>
+      <input type="text" class="form-control" name="subject" id="exampleInputName1" value="{{ params.subject}}" required>
+    </div>
+    <div class="mb-3">
+      <label>単位数</label>
+      <a>: 2</a>
+      <input type="hidden" name="unit" value="2">
+    </div>
+    <div class="mb-3">
+    <select class="form-select" aria-label="Default select example" name="department">
+
+        {% if params.select_department == "学科選択" %}
+        <option value="0" selected>{{params.select_department}}</option>
+        {% else %}
+        <option value="{{params.department}}" selected>{{params.department}}  を選択中</option>
+        {% endif %}
+        {% for department in params.departments_list %}
+        <option value="{{ department }}">{{department}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <select class="form-select" aria-label="Default select example" name="major">
+
+        {% if params.select_major == "専攻選択" %}
+        <option value="0" selected>{{params.select_major}}</option>
+        {% else %}
+        <option value="{{params.major}}" selected>{{params.major}}  を選択中</option>
+        {% endif %}
+        {% for major in params.majors_list %}
+        <option value="{{ major }}">{{major}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" name="grade">
+    
+            <option selected>学年</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+    
+        </select>
+    </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" name="dow">
+    
+            <option selected>曜日選択</option>
+            <option value="月">月曜日</option>
+            <option value="火">火曜日</option>
+            <option value="水">水曜日</option>
+            <option value="木">木曜日</option>
+            <option value="金">金曜日</option>
+            <option value="土">土曜日</option>
+    
+        </select>
+    </div>
+    <div class="mb-3">
+    <label>時間割の設定</label>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="1" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 1</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="2" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 2</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="3" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 3</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="4" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 4</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="5" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 5</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" name="timetable" type="checkbox" value="6" id="checkbox">
+        <label class="form-check-label" for="checkbox"> 6</label>
+    </div>
+    </div>
+    <a href="javascript:register.submit()" class="bn3637 bn36">登録</a>
+  </form>
+
+  <a href="home" class="homeicon">
+    <img src="../static/home_img/home.png" alt="home">
+  </a>
+</div>
+</body>
+</html>

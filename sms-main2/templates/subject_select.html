@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOME</title>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="/static/subject_select.css" rel="stylesheet">
+</head>
+<body>
+  <div class="log">
+    <!-- <a onclick="history.back()" class="submit">戻る</a> -->
+    <a href="/logout" class="submit">ログアウト</a>
+  </div>
+  <div class="whole">
+  <div class="headline">
+    <h1>授業選択</h1>
+  </div>
+  <div class="content">
+    {% if params.subject_list | length == 1 %}
+    {% for subject in params.subject_list %}
+    <form action="/display_select" method="POST" name="form2">
+      <input type="hidden" name="subject" value="{{ subject }}">
+      <p class="button_line006"><a href="javascript:form2.submit()">{{subject}}</a></p>
+    </form>
+    {% endfor %}
+    {% else %}
+    {% for subject in params.subject_list %}
+    <form action="/display_select" method="POST" name="form2">
+      <input type="hidden" name="subject" value="{{ subject }}">
+      <p class="button_line006"><a href="javascript:form2[{{loop.index0}}].submit()">{{subject}}</a></p>
+    </form>
+    {% endfor %}
+    {% endif %}
+  </div>
+  <a href="/home" class="homeicon">
+    <img src="../static/home_img/home.png" alt="home">
+  </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>成績一覧</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="/static/attendance_check.css" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <!-- <a onclick="history.back()" class="submit">戻る</a> -->
+        <a href="/logout" class="submit">ログアウト</a>
+    </div>
+    <div class="container">
+        <header>
+            <h1 class="headline">{{params.subject}}の出欠確認</h1>
+        </header>
+
+
+        <form action="/attendance_check" method="POST" name="attendance_check">
+            <input type="hidden" name="subject" value="{{params.subject}}">
+            <div class="student-container">
+                <hr size="4px">
+                {% for student in params.student_list %}
+                <input type="hidden" name="student_id" value="{{student.student_id}}">
+                <input type="hidden" name="name" value="{{student.name}}">
+                <input type="hidden" name="name_sub" value="{{student.name_sub}}">
+                <div class="tbl">
+                    <div class="id">{{student.student_id}}</div>
+                    <div class="name">{{student.name}}</div>
+                    <div class="name_sub">{{student.name_sub}}</div>
+                    <div class="input-item">
+                        <input type="radio" id="attend" name="attendance_{{student.student_id}}" value="出席" class="radio">
+                        <label class="label label-1" for="attend">出席</label>
+                        <input type="radio" id="absence" name="attendance_{{student.student_id}}" value="欠席" class="radio">
+                        <label class="label label-2" for="absence">欠席</label>        
+                        <input type="radio" id="official_absence" name="attendance_{{student.student_id}}" value="公欠" class="radio">
+                        <label class="label label-3" for="official_absence">公欠</label>
+                        <input type="radio" id="tardy" name="attendance_{{student.student_id}}" value="遅刻" class="radio">
+                        <label class="label label-4" for="tardy">遅刻</label>
+                        <input type="radio" id="left_early" name="attendance_{{student.student_id}}" value="早退" class="radio">
+                        <label class="label label-5" for="left_early">早退</label>
+                    </div>
+                </div>
+                <hr size="4px">
+                {%endfor%}
+            </div>
+            <div class="mb-3">
+            <label>日付：</label>
+            <input type="date" name="date" value="{{params.today}}">
+            </div>
+            <div class="mb-3">
+            <label>時間：</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio1" value="1">
+                <label class="form-check-label" for="inlineRadio1">1</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio2" value="2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio3" value="3">
+                <label class="form-check-label" for="inlineRadio3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio4" value="4">
+                <label class="form-check-label" for="inlineRadio4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio5" value="5">
+                <label class="form-check-label" for="inlineRadio5">5</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="timetable" id="inlineRadio6" value="6">
+                <label class="form-check-label" for="inlineRadio6">6</label>
+            </div>
+            </div>
+            <a href="javascript:attendance_check.submit()" class="bn3637 bn36">送信</a>
+        </form>
+    
+    <a href="home" class="homeicon">
+        <img src="../static/home_img/home.png" alt="home">
+    </a>
+    </div>
+</body>
+</html>
