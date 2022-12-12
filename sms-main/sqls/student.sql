@@ -7,7 +7,7 @@ create table student (
     age int NOT NULL,
     department_id int NOT NULL,
     major_id int NOT NULL,
-    class_id int,
+    class_id int default 1,
     subject_id int,
     grade int NOT NULL,
     rate varchar(2) default '',

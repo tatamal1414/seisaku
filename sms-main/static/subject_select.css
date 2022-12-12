@@ -8,7 +8,7 @@ a:hover{
 }
 
 .log{
-    display: flex;
+    position: absolute;
     justify-content: space-between;
 }
 
@@ -133,4 +133,7 @@ img{
 
 .whole{
   margin-top: 8%;
+}
+.test{
+  max-width: 100%;
 }

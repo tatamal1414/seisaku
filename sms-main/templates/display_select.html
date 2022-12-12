@@ -3,7 +3,7 @@
 <head>
   <title>表示選択画面</title>
   <meta charset="utf-8">
-  <link href="../static/display_select.css" rel="stylesheet">
+  <link href="/static/display_select.css" rel="stylesheet">
 </head>
 <body>
   <div class="content2">
@@ -12,18 +12,18 @@
   </div>
   <div class="whole">
   <div class="headline">
-    <h1>授業：{{params.subject}}</h1>
+    <h1>{{params.subject}}</h1>
   </div>
   <div class="content">
     <form action="/attendance_check" method="POST" name="attendance_check">
       <input type="hidden" name="subject" value="{{ params.subject }}">
-      <p class="button_line006"><a href="javascript:attendance_check.submit()">出席確認</a></p>
+      <p class="button_line006"><a href="javascript:attendance_check.submit()">出欠確認</a></p>
     </form> 
 
 
     <form action="/student_list" method="POST" name="student_list">
     <input type="hidden" name="subject" value="{{ params.subject }}">
-    <p class="button_line006"><a href="javascript:student_list.submit()">成績一覧</a></p>
+    <p class="button_line006"><a href="javascript:student_list.submit()">成績管理</a></p>
   </form> 
   </div>
   

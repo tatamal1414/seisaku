@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>登録画面</title>
+  <title>新規講師登録</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../static/register.css">
+  <link rel="stylesheet" href="/static/register.css">
 </head>
 <body>
   <div class="content2">
@@ -14,7 +14,7 @@
   </div>
   <div class="container">
   <div class="headline">
-    <h1>新規ユーザー登録画面</h1>
+    <h1>新規講師登録</h1>
   </div>
   <p>{{ params.msg }}</p>
   <!-- <a onclick="history.back()" class="">戻る</a> -->
@@ -25,7 +25,7 @@
       <input type="text" class="form-control" name="teacher_name" id="exampleInputName1" value="{{ params.name }}" required>
     </div>
     <div class="mb-3">
-      <label for="name" class="form-label">ふりがな</label>
+      <label for="name" class="form-label">フリガナ</label>
       <input type="text" class="form-control" name="name_sub" id="exampleInputName2" value="{{ params.name_sub }}" required>
     </div>
     <div class="mb-3">

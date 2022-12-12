@@ -4,6 +4,10 @@
     justify-content: center;
     margin-top: 8%;
     overflow: hidden;
+    width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding-top: 10%;
 
 }
 
@@ -32,7 +36,7 @@ a:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 20px;
+    margin: 56px;
     max-width: 220px;
     padding: 10px 45px;
     color: #313131;

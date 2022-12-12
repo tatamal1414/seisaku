@@ -1,6 +1,14 @@
 insert into classes(
     class,
     grade
+)
+values(
+    'NA',
+    3
+);
+insert into classes(
+    class,
+    grade
     )
 values(
     'WH3AB',

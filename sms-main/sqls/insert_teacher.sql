@@ -51,9 +51,9 @@ insert into teacher(
 
 values(
 	'000000',
-    '丸山',
-    'マルヤマ',
-    18,
+    '丸山克樹',
+    'マルヤマカツキ',
+    30,
     '男性',
 	'$2b$12$rZEeJQx9lJc0TS/uLnbsSOm0pw90FtP97tcb61EvBMXpVBh/kjEwi'
 );

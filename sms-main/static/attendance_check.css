@@ -115,8 +115,44 @@ label{
 html,body{
     overflow: hidden;
 }
+header{
+    margin-bottom: 80px;
+}
 
 .tbl{
-    border: 1px solid black;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+.tbl .id{
+    width: 15%;
+    height: 100%;
+}
+.tbl .name{
+    width: 15%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+.tbl .name_sub{
+    width: 15%;
+    height: 100%;
+}
+.tbl .input-item{
+    width: 55%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.student-container{
+    width: 100%;
+    margin-bottom: 30px;
+}
+hr {
+    padding: 0;
+    margin: 0;   
 }
 
